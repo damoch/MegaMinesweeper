@@ -38,7 +38,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Player">
+    <event eventtype="4" ename="obj_Border">
       <action>
         <libid>1</libid>
         <id>541</id>
