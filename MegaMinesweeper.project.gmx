@@ -13,6 +13,7 @@
     <sprite>sprites\spr_TempBorder</sprite>
     <sprite>sprites\spr_TempField</sprite>
     <sprite>sprites\spr_TempPlayer</sprite>
+    <sprite>sprites\spr_TempDisarmed</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -23,6 +24,7 @@
     <object>objects\obj_Goal</object>
     <object>objects\obj_Mine</object>
     <object>objects\obj_Player</object>
+    <object>objects\obj_Disarmer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Tempelate</room>
