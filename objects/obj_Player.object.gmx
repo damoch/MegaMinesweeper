@@ -105,6 +105,158 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>snd_MineDetector</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mine_detected</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>close_mine_x</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>close_mine_y</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*if(distance_to_object(instance_nearest(x,y,obj_Mine)==64) &amp;&amp;mine_detected==false){
+    show_message("MINA ");
+    mine_detected=true;
+}*/
+/*if((
+    instance_nearest(x,y,obj_Mine).y-y&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).x-x&gt;=-64)&amp;&amp;!mine_detected){
+    show_message("Mina "+string(instance_nearest(x,y,obj_Mine).y)+","+string(instance_nearest(x,y,obj_Mine).x)+"\n"+
+    "Gracz "+string(x)+","+string(y)
+    );  
+    mine_detected=true;
+    }
+*/
+if((instance_nearest(x,y,obj_Mine).y-y&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).y-y&lt;=64)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
+    close_mine_y=true;
+else
+    close_mine_y=false;
+if((instance_nearest(x,y,obj_Mine).x-x&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).x-x&lt;=64)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
+    close_mine_x=true;
+else
+    close_mine_x=false;
+    
+if(close_mine_x&amp;&amp;close_mine_y&amp;&amp;mine_detected==false){
+    show_message("Mina "+string(instance_nearest(x,y,obj_Mine).x)+","+string(instance_nearest(x,y,obj_Mine).y)+"#"+
+    "Gracz "+string(x)+","+string(y)+"#"+"Dystans: "+string(instance_nearest(x,y,obj_Mine).x-x)+","+string(instance_nearest(x,y,obj_Mine).y-y)
+    );  
+    mine_detected=true;
+    }
+else if(!close_mine_x||!close_mine_y&amp;&amp;mine_detected==true){
+    mine_detected=false;
+    }
+
+
+  
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="5" enumb="40">
       <action>
@@ -447,7 +599,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>64</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -803,7 +955,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>64</string>
+            <string>2</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -1167,7 +1319,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>-64</string>
+            <string>-2</string>
           </argument>
         </arguments>
       </action>
@@ -1523,7 +1675,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>-64</string>
+            <string>-2</string>
           </argument>
           <argument>
             <kind>0</kind>
