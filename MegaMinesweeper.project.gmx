@@ -5,9 +5,7 @@
   </Configs>
   <datafiles number="13" name="datafiles"/>
   <NewExtensions/>
-  <sounds name="sound">
-    <sound>sound\snd_MineDetector</sound>
-  </sounds>
+  <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Mine</sprite>
     <sprite>sprites\spr_MineDetected</sprite>
