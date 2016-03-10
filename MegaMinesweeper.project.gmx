@@ -5,7 +5,11 @@
   </Configs>
   <datafiles number="13" name="datafiles"/>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_BeepingNormal</sound>
+    <sound>sound\snd_BeepingFaster</sound>
+    <sound>sound\snd_BeepingDanger</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Mine</sprite>
     <sprite>sprites\spr_MineDetected</sprite>
