@@ -15,7 +15,9 @@
     <sprite>sprites\spr_TempPlayer</sprite>
     <sprite>sprites\spr_TempDisarmed</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_Minefield</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_Border</object>
