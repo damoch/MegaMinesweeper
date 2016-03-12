@@ -31,6 +31,7 @@
     <object>objects\obj_Mine</object>
     <object>objects\obj_Player</object>
     <object>objects\obj_Disarmer</object>
+    <object>objects\obj_Disarmed</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Tempelate</room>

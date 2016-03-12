@@ -36,8 +36,94 @@ mine_near_x=false;
 mine_near_y=false;
 mine_danger=false;
 disarmers_left=obj_Mine.instance_count+3;
-
+music="";
+alarm[1]=1;
 disarming=false;
+distance_to_mine=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(music!="danger"){
+audio_stop_sound(snd_BeepingNormal);
+audio_stop_sound(snd_BeepingFaster);
+audio_play_sound(snd_BeepingDanger,1,true);
+music="danger"
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(music!="normal"){
+audio_stop_sound(snd_BeepingFaster);
+audio_stop_sound(snd_BeepingDanger);
+audio_play_sound(snd_BeepingNormal,1,true);
+music="normal"
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(music!="faster"&amp;&amp;!mine_danger){
+audio_stop_sound(snd_BeepingNormal);
+audio_stop_sound(snd_BeepingDanger);
+audio_play_sound(snd_BeepingFaster,1,true);
+music="faster"
+}
 </string>
           </argument>
         </arguments>
@@ -60,346 +146,39 @@ disarming=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*if(distance_to_object(instance_nearest(x,y,obj_Mine)==64) &amp;&amp;mine_detected==false){
-    show_message("MINA ");
-    mine_detected=true;
-}*/
-/*if((
-    instance_nearest(x,y,obj_Mine).y-y&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).x-x&gt;=-64)&amp;&amp;!mine_detected){
-    show_message("Mina "+string(instance_nearest(x,y,obj_Mine).y)+","+string(instance_nearest(x,y,obj_Mine).x)+"\n"+
-    "Gracz "+string(x)+","+string(y)
-    );  
-    mine_detected=true;
-    }
-*/
-//mine detected message
-if((instance_nearest(x,y,obj_Mine).y-y&gt;=-128&amp;&amp;instance_nearest(x,y,obj_Mine).y-y&lt;=128)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
-    close_mine_y=true;
-else
-    close_mine_y=false;
-if((instance_nearest(x,y,obj_Mine).x-x&gt;=-128&amp;&amp;instance_nearest(x,y,obj_Mine).x-x&lt;=128)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
-    close_mine_x=true;
-else
-    close_mine_x=false;
-//mine danger message
-if((instance_nearest(x,y,obj_Mine).y-y&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).y-y&lt;=64)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
-    near_mine_y=true;
-else
-    near_mine_y=false;
-if((instance_nearest(x,y,obj_Mine).x-x&gt;=-64&amp;&amp;instance_nearest(x,y,obj_Mine).x-x&lt;=64)&amp;&amp;instance_nearest(x,y,obj_Mine).armed==true)
-    near_mine_x=true;
-else
-    near_mine_x=false;
+            <string>
+distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));
+
     
 
 //*****************************************************************************
 
-if(close_mine_x&amp;&amp;close_mine_y&amp;&amp;mine_detected==false){//temporary code for mine detection
-  /*  show_message("Mina "+string(instance_nearest(x,y,obj_Mine).x)+","+string(instance_nearest(x,y,obj_Mine).y)+"#"+
-    "Gracz "+string(x)+","+string(y)+"#"+"Dystans: "+string(instance_nearest(x,y,obj_Mine).x-x)+","+string(instance_nearest(x,y,obj_Mine).y-y)
-    );  */
-   // audio_stop_sound(snd_BeepingNormal);
-    //audio_play_sound(snd_BeepingFaster,1,true);
+if(distance_to_mine&lt;=60&amp;&amp;mine_detected==false&amp;&amp;!mine_danger){//temporary code for mine detection
+
+    alarm[0]=1;
+ 
     mine_detected=true;
     }
-else if(!close_mine_x||!close_mine_y&amp;&amp;mine_detected==true){
+else if(distance_to_mine&gt;60&amp;&amp;mine_detected==true){
     mine_detected=false;
-    //audio_stop_sound(snd_BeepingFaster);
-    //audio_play_sound(snd_BeepingNormal,1,true);
+    alarm[1]=1;
+
     }
 
-if(near_mine_x&amp;&amp;near_mine_y&amp;&amp;mine_danger=false){//temporary code for mine danger
-  /*  show_message("UWAGA MINA: "+string(instance_nearest(x,y,obj_Mine).x)+","+string(instance_nearest(x,y,obj_Mine).y)+"#"+
-    "Gracz "+string(x)+","+string(y)+"#"+"Dystans: "+string(instance_nearest(x,y,obj_Mine).x-x)+","+string(instance_nearest(x,y,obj_Mine).y-y)
-    );*/
-    //audio_stop_sound(snd_BeepingFaster);
-   //audio_play_sound(snd_BeepingDanger,1,true);  
+if(distance_to_mine&lt;=20&amp;&amp;mine_danger=false){//temporary code for mine danger
+
+   alarm[2]=1;
     mine_danger=true;
     }
-else if(!near_mine_x||!near_mine_y&amp;&amp;mine_danger==true&amp;&amp;close_mine_x&amp;&amp;close_mine_y){
+else if(distance_to_mine&gt;20&amp;&amp;mine_danger==true&amp;&amp;close_mine_x&amp;&amp;close_mine_y){
     mine_danger=false;
-    //audio_stop_sound(snd_BeepingDanger);
-    //audio_play_sound(snd_BeepingNormal,0,false);
+
+    alarm[1]=1;
     }
+    else if(distance_to_mine&gt;60)alarm[1]=1;
   
-    
+
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>mine_detected</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingNormal</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingFaster</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingDanger</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>612</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>-1</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_if_variable</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>mine_danger</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingNormal</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingFaster</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingDanger</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>421</id>
-        <kind>3</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingNormal</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingFaster</sound>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>212</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_end_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>snd_BeepingDanger</sound>
           </argument>
         </arguments>
       </action>
