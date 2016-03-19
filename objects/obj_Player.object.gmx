@@ -149,11 +149,7 @@ music="faster"
             <string>
 distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));
 
-    
-
-//*****************************************************************************
-
-if(distance_to_mine&lt;=60&amp;&amp;mine_detected==false&amp;&amp;!mine_danger){//temporary code for mine detection
+if(distance_to_mine&lt;=60&amp;&amp;mine_detected==false&amp;&amp;!mine_danger){
 
     alarm[0]=1;
  
@@ -164,8 +160,7 @@ else if(distance_to_mine&gt;60&amp;&amp;mine_detected==true){
     alarm[1]=1;
 
     }
-
-if(distance_to_mine&lt;=20&amp;&amp;mine_danger=false){//temporary code for mine danger
+if(distance_to_mine&lt;=20&amp;&amp;mine_danger=false){
 
    alarm[2]=1;
     mine_danger=true;
@@ -175,7 +170,7 @@ else if(distance_to_mine&gt;20&amp;&amp;mine_danger==true&amp;&amp;close_mine_x&
 
     alarm[1]=1;
     }
-    else if(distance_to_mine&gt;60)alarm[1]=1;
+else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=false;}
   
 
 </string>

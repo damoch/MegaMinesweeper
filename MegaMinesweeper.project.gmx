@@ -18,20 +18,21 @@
     <sprite>sprites\spr_TempField</sprite>
     <sprite>sprites\spr_TempPlayer</sprite>
     <sprite>sprites\spr_TempDisarmed</sprite>
+    <sprite>sprites\spr_Boom</sprite>
+    <sprite>sprites\spr_Smoke</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_Border</object>
     <object>objects\obj_Debug</object>
-    <object>objects\obj_Field</object>
     <object>objects\obj_Goal</object>
     <object>objects\obj_Mine</object>
     <object>objects\obj_Player</object>
     <object>objects\obj_Disarmer</object>
     <object>objects\obj_Disarmed</object>
+    <object>objects\obj_Explosion</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Tempelate</room>
