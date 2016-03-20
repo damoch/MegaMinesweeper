@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>if(instance_exists(obj_Player))
 draw_text(0,0,obj_Player.distance_to_mine);
+draw_text(64,0,"Disarmers left: "+string(obj_Player.disarmers_left))
 </string>
           </argument>
         </arguments>

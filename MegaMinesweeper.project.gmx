@@ -20,6 +20,7 @@
     <sprite>sprites\spr_TempDisarmed</sprite>
     <sprite>sprites\spr_Boom</sprite>
     <sprite>sprites\spr_Smoke</sprite>
+    <sprite>sprites\spr_Blood</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -33,8 +34,11 @@
     <object>objects\obj_Disarmer</object>
     <object>objects\obj_Disarmed</object>
     <object>objects\obj_Explosion</object>
+    <object>objects\obj_Smoke</object>
+    <object>objects\obj_Blood</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Tempelate</room>
   </rooms>
   <help>
