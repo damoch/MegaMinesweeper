@@ -48,6 +48,32 @@ distance_to_mine=0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//For game over event only!
+audio_stop_all()
+show_message("Game Over");
+room_restart();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
@@ -149,7 +175,7 @@ music="faster"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = point_direction(x, y, mouse_x, mouse_y);
+            <string>//image_angle = point_direction(x, y, mouse_x, mouse_y);
 distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));
 
 if(distance_to_mine&lt;=60&amp;&amp;mine_detected==false&amp;&amp;!mine_danger){
@@ -522,7 +548,7 @@ else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=fa
           </argument>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -878,7 +904,7 @@ else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=fa
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>2</string>
+            <string>1</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -1242,7 +1268,7 @@ else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=fa
           </argument>
           <argument>
             <kind>0</kind>
-            <string>-2</string>
+            <string>-1</string>
           </argument>
         </arguments>
       </action>
@@ -1598,7 +1624,7 @@ else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=fa
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>-2</string>
+            <string>-1</string>
           </argument>
           <argument>
             <kind>0</kind>

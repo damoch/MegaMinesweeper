@@ -21,6 +21,8 @@
     <sprite>sprites\spr_Boom</sprite>
     <sprite>sprites\spr_Smoke</sprite>
     <sprite>sprites\spr_Blood</sprite>
+    <sprite>sprites\spr_Menu0</sprite>
+    <sprite>sprites\spr_Menu1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -36,10 +38,14 @@
     <object>objects\obj_Explosion</object>
     <object>objects\obj_Smoke</object>
     <object>objects\obj_Blood</object>
+    <object>objects\obj_Controller</object>
+    <object>objects\obj_MenuRandom</object>
+    <object>objects\obj_MenuMissions</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Menu</room>
     <room>rooms\rm_Randomized</room>
-    <room>rooms\rm_Tempelate</room>
+    <room>rooms\rm_Template</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
