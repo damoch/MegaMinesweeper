@@ -9,6 +9,9 @@
     <sound>sound\snd_BeepingNormal</sound>
     <sound>sound\snd_BeepingFaster</sound>
     <sound>sound\snd_BeepingDanger</sound>
+    <sounds name="Music">
+      <sound>sound\mu_ItsTooQuiet</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Mine</sprite>
@@ -23,6 +26,7 @@
     <sprite>sprites\spr_Blood</sprite>
     <sprite>sprites\spr_Menu0</sprite>
     <sprite>sprites\spr_Menu1</sprite>
+    <sprite>sprites\spr_DisarmKit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -41,6 +45,7 @@
     <object>objects\obj_Controller</object>
     <object>objects\obj_MenuRandom</object>
     <object>objects\obj_MenuMissions</object>
+    <object>objects\obj_DisarmKit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Menu</room>

@@ -25,8 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>//music control
+audio_play_sound(mu_ItsTooQuiet,0.5,true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>//setup
 lifes=3;
+easy_mode=false;
 
 </string>
           </argument>
@@ -98,6 +121,32 @@ obj_Player.alarm[3]=1;
           <argument>
             <kind>11</kind>
             <room>rm_Menu</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_exists(obj_Player))
+
+if(easy_mode)draw_text(0,0,obj_Player.distance_to_mine);
+draw_text(64,0,"Disarmers left: "+string(obj_Player.disarmers_left))
+</string>
           </argument>
         </arguments>
       </action>
