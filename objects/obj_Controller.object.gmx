@@ -77,6 +77,11 @@ easy_mode=false;
 if(lifes&lt;=0){
 obj_Player.alarm[3]=1;
 }
+if(!instance_exists(obj_Mine)){
+    show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
+    obj_Player.alarm[3]=1;
+    room_restart();
+    }
 </string>
           </argument>
         </arguments>
