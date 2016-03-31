@@ -75,6 +75,7 @@ for (a=0 a&lt;=room_height a+=64) {
     <instance objName="obj_Mine" x="256" y="192" name="inst_9E36B9F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Mine" x="192" y="576" name="inst_D028ECA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Controller" x="128" y="192" name="inst_6D95A25C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Obstacle" x="512" y="512" name="inst_53B117F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
