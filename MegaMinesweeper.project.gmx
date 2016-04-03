@@ -28,6 +28,8 @@
     <sprite>sprites\spr_Menu1</sprite>
     <sprite>sprites\spr_DisarmKit</sprite>
     <sprite>sprites\spr_Obstacle</sprite>
+    <sprite>sprites\spr_Menu2</sprite>
+    <sprite>sprites\spr_Menu3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -48,11 +50,14 @@
     <object>objects\obj_MenuMissions</object>
     <object>objects\obj_DisarmKit</object>
     <object>objects\obj_Obstacle</object>
+    <object>objects\obj_MenuOptions</object>
+    <object>objects\obj_MenuBack</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Menu</room>
     <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Template</room>
-    <room>rooms\rm_Menu</room>
+    <room>rooms\rm_Options</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
