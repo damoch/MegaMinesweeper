@@ -30,6 +30,9 @@
     <sprite>sprites\spr_Obstacle</sprite>
     <sprite>sprites\spr_Menu2</sprite>
     <sprite>sprites\spr_Menu3</sprite>
+    <sprite>sprites\spr_SliderA</sprite>
+    <sprite>sprites\spr_SliderB</sprite>
+    <sprite>sprites\spr_Player</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -52,6 +55,8 @@
     <object>objects\obj_Obstacle</object>
     <object>objects\obj_MenuOptions</object>
     <object>objects\obj_MenuBack</object>
+    <object>objects\obj_SliderA</object>
+    <object>objects\obj_SliderB</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Menu</room>
