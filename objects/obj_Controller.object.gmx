@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>//music control
-audio_play_sound(mu_ItsTooQuiet,0.5,true);
+ini_open('settings.ini')
+volume=ini_read_real('settings','volume',0.5);
+ini_close();
+audio_play_sound(mu_ItsTooQuiet,volume,true);
 </string>
           </argument>
         </arguments>
