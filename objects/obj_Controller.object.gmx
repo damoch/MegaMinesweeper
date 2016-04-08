@@ -26,10 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>//music control
-ini_open('settings.ini')
+
+ini_open('options.ini')
 volume=ini_read_real('settings','volume',0.5);
 ini_close();
-audio_play_sound(mu_ItsTooQuiet,volume,true);
+audio_play_sound(mu_ItsTooQuiet,1,true);
+audio_sound_gain(mu_ItsTooQuiet,volume,0)
+show_message(volume)
 </string>
           </argument>
         </arguments>
@@ -52,7 +55,7 @@ audio_play_sound(mu_ItsTooQuiet,volume,true);
             <kind>1</kind>
             <string>//setup
 lifes=3;
-easy_mode=false;
+easy_mode=true;
 
 </string>
           </argument>
