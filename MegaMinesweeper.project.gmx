@@ -55,8 +55,9 @@
     <object>objects\obj_Obstacle</object>
     <object>objects\obj_MenuOptions</object>
     <object>objects\obj_MenuBack</object>
-    <object>objects\obj_SliderA</object>
-    <object>objects\obj_SliderB</object>
+    <object>objects\obj_MusicSliderA</object>
+    <object>objects\obj_MusicSliderB</object>
+    <object>objects\obj_EasyCheckBox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Menu</room>

@@ -32,31 +32,13 @@ volume=ini_read_real('settings','volume',0.5);
 ini_close();
 audio_play_sound(mu_ItsTooQuiet,1,true);
 audio_sound_gain(mu_ItsTooQuiet,volume,0)
-show_message(volume)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//setup
+//setup
 lifes=3;
-easy_mode=true;
-
+ini_open('options.ini')
+easy_mode=ini_read_real('settings','easy_mode',false);
+ini_close();
+//easy_mode=true;
+//show_message(volume)
 </string>
           </argument>
         </arguments>
