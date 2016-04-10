@@ -177,49 +177,49 @@ music="faster"
             <kind>1</kind>
             <string>//Walk
 if (keyboard_check(ord("W")) /*&amp;&amp; !place_meeting(x,y-1,obj_Obstacle)*/){
-    if(rotate){
+    if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="up";
     image_angle=0;
     }
     else{
     looking="up";
     image_angle=0;
-    if(y&gt;64&amp;&amp;!place_meeting(x,y-1,obj_Obstacle))y=y-1;}
+    if(y&gt;64&amp;&amp;!place_meeting(x,y-1,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")y=y-1;}
 }
 
 if (keyboard_check(ord("S")) /*&amp;&amp; !place_meeting(x,y+1,obj_Obstacle)*/){
-  if(rotate){
+  if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="down";
     image_angle=180;
     }
     else{
     looking="down";
     image_angle=180;
-    if(y&lt;room_height-64&amp;&amp;!place_meeting(x,y+1,obj_Obstacle))y=y+1
+    if(y&lt;room_height-64&amp;&amp;!place_meeting(x,y+1,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")y=y+1
     }
 }
 
 if (keyboard_check(ord("A")) /*&amp;&amp; !place_meeting(x-1,y,obj_Obstacle)*/){
-    if(rotate){
+    if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="left";
     image_angle=90;
     }
     else{
     looking="left";
     image_angle=90;
-    if(x&gt;128&amp;&amp;!place_meeting(x-1,y,obj_Obstacle))x=x-1
+    if(x&gt;128&amp;&amp;!place_meeting(x-1,y,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")x=x-1
     }
 }
 
 if (keyboard_check(ord("D")) /*&amp;&amp; !place_meeting(x+1,y,obj_Obstacle)*/){
- if(rotate){
+ if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="right";
     image_angle=270;
     }
     else{
     looking="right";
     image_angle=270;
-    if(!place_meeting(x+1,y,obj_Obstacle)&amp;&amp;x&lt;room_width-64)x=x+1} 
+    if(!place_meeting(x+1,y,obj_Obstacle)&amp;&amp;x&lt;room_width-64&amp;&amp;obj_Controller.game_state=="running")x=x+1} 
     }
 //image_angle = point_direction(x, y, mouse_x, mouse_y);
 distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));

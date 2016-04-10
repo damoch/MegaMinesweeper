@@ -3,7 +3,7 @@
   <spriteName>spr_Menu3</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1502</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -30,7 +30,25 @@ ini_open('options.ini')
 ini_write_real('settings','volume',obj_MusicSliderB.value);
 ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
 ini_close();
+if(!instance_exists(obj_Controller)){
 room_goto(rm_Menu)
+}
+else{
+instance_create(obj_Menu.x,obj_Menu.y,obj_MenuOptions)
+with(obj_MusicSliderA)//obj_MusicSliderB,obj_EasyCheckBox){
+{
+    instance_destroy();
+}
+with(obj_MusicSliderB)//obj_MusicSliderB,obj_EasyCheckBox){
+{
+    instance_destroy();
+}
+with(obj_EasyCheckBox)//obj_MusicSliderB,obj_EasyCheckBox){
+{
+    instance_destroy();
+}
+instance_destroy();
+}
 </string>
           </argument>
         </arguments>
