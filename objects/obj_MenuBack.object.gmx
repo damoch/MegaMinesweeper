@@ -34,6 +34,16 @@ if(!instance_exists(obj_Controller)){
 room_goto(rm_Menu)
 }
 else{
+
+    ini_open('options.ini')
+    ini_write_real('settings','volume',obj_MusicSliderB.value);
+    ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
+    obj_Controller.volume=ini_read_real('settings','volume',0.5);
+    audio_sound_gain(mu_ItsTooQuiet,obj_Controller.volume,0)
+    obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
+    ini_close();
+ 
+    
 instance_create(obj_Menu.x,obj_Menu.y,obj_MenuOptions)
 with(obj_MusicSliderA)//obj_MusicSliderB,obj_EasyCheckBox){
 {
@@ -49,6 +59,38 @@ with(obj_EasyCheckBox)//obj_MusicSliderB,obj_EasyCheckBox){
 }
 instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(instance_exists(obj_Controller)){
+    ini_open('options.ini')
+    ini_write_real('settings','volume',obj_MusicSliderB.value);
+    ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
+    obj_Controller.volume=ini_read_real('settings','volume',0.5);
+    audio_sound_gain(mu_ItsTooQuiet,obj_Controller.volume,0)
+    obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
+    ini_close();
+    instance_destroy();
+    }
 </string>
           </argument>
         </arguments>
