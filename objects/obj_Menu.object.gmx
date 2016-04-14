@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y-256,obj_MenuOptions);
+            <string>instance_create(x,y,obj_MenuOptions);
 </string>
           </argument>
         </arguments>

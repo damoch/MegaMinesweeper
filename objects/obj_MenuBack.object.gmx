@@ -39,7 +39,7 @@ else{
     ini_write_real('settings','volume',obj_MusicSliderB.value);
     ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
     obj_Controller.volume=ini_read_real('settings','volume',0.5);
-    audio_sound_gain(mu_ItsTooQuiet,obj_Controller.volume,0)
+    audio_sound_gain(obj_Controller.music[obj_Controller.index],obj_Controller.volume,0)
     obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
     ini_close();
  

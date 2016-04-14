@@ -30,7 +30,7 @@ else{
 instance_create(320,384,obj_MusicSliderA)
 instance_create(x,384,obj_MusicSliderB)
 instance_create(x+78,y-128,obj_EasyCheckBox)
-instance_create(obj_Menu.x,y+128,obj_MenuBack)
+instance_create(obj_Menu.x-160,y+128,obj_MenuBack)
 instance_destroy();
 }
 </string>
