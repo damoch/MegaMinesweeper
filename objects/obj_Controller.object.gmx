@@ -28,7 +28,8 @@
             <string>//music controll
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
-
+draw_set_font(military_font);
+draw_set_colour(c_white);
 /*temporary music selctor*/
 index=random_range(0,9)
 if(index&lt;5)index=0

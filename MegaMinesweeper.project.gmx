@@ -40,6 +40,9 @@
     <background>background\bck_Minefield</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\military_font</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_Debug</object>
     <object>objects\obj_Goal</object>

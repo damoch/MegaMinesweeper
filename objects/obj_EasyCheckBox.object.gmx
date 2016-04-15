@@ -82,6 +82,7 @@ else {sprite_index=spr_TempField;easy_mode=false;}
           <argument>
             <kind>1</kind>
             <string>draw_self();
+draw_set_font(military_font);
 draw_text(x-160,y-8,"Easy mode: ");
 </string>
           </argument>
