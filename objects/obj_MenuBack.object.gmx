@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -35,16 +35,11 @@ room_goto(rm_Menu)
 }
 else{
 
-    ini_open('options.ini')
-    ini_write_real('settings','volume',obj_MusicSliderB.value);
-    ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
-    obj_Controller.volume=ini_read_real('settings','volume',0.5);
-    audio_sound_gain(obj_Controller.music[obj_Controller.index],obj_Controller.volume,0)
-    obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
-    ini_close();
+
  
     
 instance_create(obj_Menu.x,obj_Menu.y,obj_MenuOptions)
+instance_create(obj_Menu.x,obj_Menu.y+128,obj_ExitGame)
 with(obj_MusicSliderA)//obj_MusicSliderB,obj_EasyCheckBox){
 {
     instance_destroy();
@@ -57,6 +52,7 @@ with(obj_EasyCheckBox)//obj_MusicSliderB,obj_EasyCheckBox){
 {
     instance_destroy();
 }
+with(obj_MenuApply){instance_destroy()}
 instance_destroy();
 }
 </string>
@@ -82,13 +78,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if(instance_exists(obj_Controller)){
-    ini_open('options.ini')
-    ini_write_real('settings','volume',obj_MusicSliderB.value);
-    ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
-    obj_Controller.volume=ini_read_real('settings','volume',0.5);
-    audio_sound_gain(mu_ItsTooQuiet,obj_Controller.volume,0)
-    obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
-    ini_close();
+  
     instance_destroy();
     }
 </string>

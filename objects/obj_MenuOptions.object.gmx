@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -31,7 +31,10 @@ instance_create(320,384,obj_MusicSliderA)
 instance_create(x,384,obj_MusicSliderB)
 instance_create(x+78,y-128,obj_EasyCheckBox)
 instance_create(x,y+128,obj_MenuBack)
+instance_create(x,y+192,obj_MenuApply)
+with(obj_ExitGame){instance_destroy()}
 instance_destroy();
+
 }
 </string>
           </argument>

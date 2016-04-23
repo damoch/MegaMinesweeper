@@ -35,6 +35,8 @@
     <sprite>sprites\spr_SliderB</sprite>
     <sprite>sprites\spr_Player</sprite>
     <sprite>sprites\spr_Menu</sprite>
+    <sprite>sprites\spr_MenuApply</sprite>
+    <sprite>sprites\spr_Exit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -55,7 +57,6 @@
     <object>objects\obj_Blood</object>
     <object>objects\obj_Controller</object>
     <object>objects\obj_MenuRandom</object>
-    <object>objects\obj_MenuMissions</object>
     <object>objects\obj_DisarmKit</object>
     <object>objects\obj_Obstacle</object>
     <object>objects\obj_MenuOptions</object>
@@ -64,12 +65,13 @@
     <object>objects\obj_MusicSliderB</object>
     <object>objects\obj_EasyCheckBox</object>
     <object>objects\obj_Menu</object>
+    <object>objects\obj_MenuApply</object>
+    <object>objects\obj_ExitGame</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Menu</room>
-    <room>rooms\rm_Template</room>
     <room>rooms\rm_Options</room>
+    <room>rooms\rm_Randomized</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
