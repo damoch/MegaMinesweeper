@@ -37,9 +37,11 @@
     <sprite>sprites\spr_Menu</sprite>
     <sprite>sprites\spr_MenuApply</sprite>
     <sprite>sprites\spr_Exit</sprite>
+    <sprite>sprites\spr_Btg</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
+    <background>background\bck_Menu</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -67,11 +69,12 @@
     <object>objects\obj_Menu</object>
     <object>objects\obj_MenuApply</object>
     <object>objects\obj_ExitGame</object>
+    <object>objects\obj_BackToGame</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Menu</room>
     <room>rooms\rm_Options</room>
-    <room>rooms\rm_Randomized</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

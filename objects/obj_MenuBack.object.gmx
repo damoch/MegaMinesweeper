@@ -38,8 +38,9 @@ else{
 
  
     
-instance_create(obj_Menu.x,obj_Menu.y,obj_MenuOptions)
-instance_create(obj_Menu.x,obj_Menu.y+128,obj_ExitGame)
+instance_create(obj_Menu.x,obj_Menu.y,obj_MenuOptions);
+instance_create(obj_Menu.x,obj_Menu.y+100,obj_BackToGame);
+instance_create(obj_Menu.x,obj_Menu.y+200,obj_ExitGame);
 with(obj_MusicSliderA)//obj_MusicSliderB,obj_EasyCheckBox){
 {
     instance_destroy();

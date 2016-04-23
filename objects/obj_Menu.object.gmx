@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,obj_MenuOptions);
-instance_create(x,y+128,obj_ExitGame);
+instance_create(x,y+100,obj_BackToGame);
+instance_create(x,y+200,obj_ExitGame);
 </string>
           </argument>
         </arguments>
