@@ -49,6 +49,7 @@
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
     <background>background\bck_Menu</background>
+    <background>background\main_bck</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
