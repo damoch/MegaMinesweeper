@@ -15,29 +15,36 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_Mine</sprite>
-    <sprite>sprites\spr_MineDetected</sprite>
-    <sprite>sprites\spr_Target</sprite>
-    <sprite>sprites\spr_TempBorder</sprite>
-    <sprite>sprites\spr_TempField</sprite>
-    <sprite>sprites\spr_TempPlayer</sprite>
-    <sprite>sprites\spr_TempDisarmed</sprite>
-    <sprite>sprites\spr_Boom</sprite>
-    <sprite>sprites\spr_Smoke</sprite>
-    <sprite>sprites\spr_Blood</sprite>
-    <sprite>sprites\spr_Menu0</sprite>
-    <sprite>sprites\spr_Menu1</sprite>
-    <sprite>sprites\spr_DisarmKit</sprite>
-    <sprite>sprites\spr_Obstacle</sprite>
-    <sprite>sprites\spr_Menu2</sprite>
-    <sprite>sprites\spr_Menu3</sprite>
-    <sprite>sprites\spr_SliderA</sprite>
-    <sprite>sprites\spr_SliderB</sprite>
-    <sprite>sprites\spr_Player</sprite>
-    <sprite>sprites\spr_Menu</sprite>
-    <sprite>sprites\spr_MenuApply</sprite>
-    <sprite>sprites\spr_Exit</sprite>
-    <sprite>sprites\spr_Btg</sprite>
+    <sprites name="tempfiles">
+      <sprite>sprites\spr_TempPlayer</sprite>
+      <sprite>sprites\spr_SliderB</sprite>
+      <sprite>sprites\spr_SliderA</sprite>
+      <sprite>sprites\spr_TempField</sprite>
+      <sprite>sprites\spr_Menu1</sprite>
+      <sprite>sprites\spr_Obstacle</sprite>
+      <sprite>sprites\spr_TempBorder</sprite>
+      <sprite>sprites\spr_Target</sprite>
+      <sprite>sprites\spr_TempDisarmed</sprite>
+    </sprites>
+    <sprites name="GUI">
+      <sprite>sprites\spr_MenuApply</sprite>
+      <sprite>sprites\spr_Exit</sprite>
+      <sprite>sprites\spr_Menu3</sprite>
+      <sprite>sprites\spr_Btg</sprite>
+      <sprite>sprites\spr_Menu2</sprite>
+      <sprite>sprites\spr_Menu</sprite>
+      <sprite>sprites\spr_Menu0</sprite>
+    </sprites>
+    <sprites name="GameFiles">
+      <sprite>sprites\spr_Smoke</sprite>
+      <sprite>sprites\spr_Player</sprite>
+      <sprite>sprites\spr_MineDetected</sprite>
+      <sprite>sprites\spr_DisarmKit</sprite>
+      <sprite>sprites\spr_Boom</sprite>
+      <sprite>sprites\spr_Disarmer</sprite>
+      <sprite>sprites\spr_Blood</sprite>
+      <sprite>sprites\spr_Mine</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
@@ -48,28 +55,34 @@
     <font>fonts\military_font</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_Debug</object>
-    <object>objects\obj_Goal</object>
-    <object>objects\obj_Mine</object>
-    <object>objects\obj_Player</object>
-    <object>objects\obj_Disarmer</object>
-    <object>objects\obj_Disarmed</object>
-    <object>objects\obj_Explosion</object>
-    <object>objects\obj_Smoke</object>
-    <object>objects\obj_Blood</object>
-    <object>objects\obj_Controller</object>
-    <object>objects\obj_MenuRandom</object>
-    <object>objects\obj_DisarmKit</object>
-    <object>objects\obj_Obstacle</object>
-    <object>objects\obj_MenuOptions</object>
-    <object>objects\obj_MenuBack</object>
-    <object>objects\obj_MusicSliderA</object>
-    <object>objects\obj_MusicSliderB</object>
-    <object>objects\obj_EasyCheckBox</object>
-    <object>objects\obj_Menu</object>
-    <object>objects\obj_MenuApply</object>
-    <object>objects\obj_ExitGame</object>
-    <object>objects\obj_BackToGame</object>
+    <objects name="GUI">
+      <object>objects\obj_ExitGame</object>
+      <object>objects\obj_EasyCheckBox</object>
+      <object>objects\obj_MusicSliderB</object>
+      <object>objects\obj_MenuOptions</object>
+      <object>objects\obj_MenuRandom</object>
+      <object>objects\obj_MenuBack</object>
+      <object>objects\obj_MusicSliderA</object>
+      <object>objects\obj_Menu</object>
+      <object>objects\obj_MenuApply</object>
+      <object>objects\obj_BackToGame</object>
+    </objects>
+    <objects name="GameFiles">
+      <object>objects\obj_Obstacle</object>
+      <object>objects\obj_Blood</object>
+      <object>objects\obj_Explosion</object>
+      <object>objects\obj_Player</object>
+      <object>objects\obj_Disarmer</object>
+      <object>objects\obj_Mine</object>
+      <object>objects\obj_Disarmed</object>
+      <object>objects\obj_Smoke</object>
+      <object>objects\obj_DisarmKit</object>
+    </objects>
+    <objects name="Misc">
+      <object>objects\obj_Controller</object>
+      <object>objects\obj_Debug</object>
+      <object>objects\obj_Goal</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Randomized</room>
