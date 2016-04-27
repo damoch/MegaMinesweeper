@@ -6,9 +6,12 @@
   <datafiles number="13" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_BeepingNormal</sound>
-    <sound>sound\snd_BeepingFaster</sound>
-    <sound>sound\snd_BeepingDanger</sound>
+    <sounds name="Sfx">
+      <sound>sound\snd_Boom</sound>
+      <sound>sound\snd_BeepingFaster</sound>
+      <sound>sound\snd_BeepingNormal</sound>
+      <sound>sound\snd_BeepingDanger</sound>
+    </sounds>
     <sounds name="Music">
       <sound>sound\mu_ItsTooQuiet</sound>
       <sound>sound\mu_Careful</sound>
@@ -49,7 +52,7 @@
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
     <background>background\bck_Menu</background>
-    <background>background\main_bck</background>
+    <background>background\bck_Main</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -83,6 +86,7 @@
       <object>objects\obj_Controller</object>
       <object>objects\obj_Debug</object>
       <object>objects\obj_Goal</object>
+      <object>objects\efc_CamShake</object>
     </objects>
   </objects>
   <rooms name="rooms">
