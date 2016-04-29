@@ -36,13 +36,14 @@ mine_near_x=false;
 mine_near_y=false;
 mine_danger=false;
 //setting ammount of disarmers
-if(instance_exists(obj_Mine))disarmers_left=obj_Mine.instance_count+3;
-else disarmers_left=13;
+//if(instance_exists(obj_Mine))disarmers_left=obj_Mine.instance_count+3;
+//else disarmers_left=13;
 
 music="";
 alarm[1]=1;
 disarming=false;
 distance_to_mine=0;
+disarmers_copy=0;
 </string>
           </argument>
         </arguments>
@@ -67,8 +68,7 @@ distance_to_mine=0;
             <kind>1</kind>
             <string>//For game over event only!
 audio_stop_all()
-show_message("Game Over");
-room_restart();
+
 </string>
           </argument>
         </arguments>

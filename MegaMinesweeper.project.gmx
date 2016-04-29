@@ -15,6 +15,7 @@
     <sounds name="Music">
       <sound>sound\mu_ItsTooQuiet</sound>
       <sound>sound\mu_Careful</sound>
+      <sound>sound\mu_SweepingMines</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -30,6 +31,7 @@
       <sprite>sprites\spr_TempDisarmed</sprite>
     </sprites>
     <sprites name="GUI">
+      <sprite>sprites\spr_Switch</sprite>
       <sprite>sprites\spr_MenuApply</sprite>
       <sprite>sprites\spr_Exit</sprite>
       <sprite>sprites\spr_Menu3</sprite>
@@ -37,6 +39,8 @@
       <sprite>sprites\spr_Menu2</sprite>
       <sprite>sprites\spr_Menu</sprite>
       <sprite>sprites\spr_Menu0</sprite>
+      <sprite>sprites\spr_GameOver</sprite>
+      <sprite>sprites\spr_Victory</sprite>
     </sprites>
     <sprites name="GameFiles">
       <sprite>sprites\spr_Smoke</sprite>
@@ -52,6 +56,7 @@
   <backgrounds name="background">
     <background>background\bck_Minefield</background>
     <background>background\bck_Menu</background>
+    <background>background\bck_Options</background>
     <background>background\bck_Main</background>
   </backgrounds>
   <paths name="paths"/>
@@ -70,6 +75,8 @@
       <object>objects\obj_Menu</object>
       <object>objects\obj_MenuApply</object>
       <object>objects\obj_BackToGame</object>
+      <object>objects\obj_GameOver</object>
+      <object>objects\obj_Victory</object>
     </objects>
     <objects name="GameFiles">
       <object>objects\obj_Obstacle</object>
@@ -91,8 +98,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Randomized</room>
-    <room>rooms\rm_Menu</room>
     <room>rooms\rm_Options</room>
+    <room>rooms\rm_Menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

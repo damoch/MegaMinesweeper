@@ -28,12 +28,12 @@
             <string>//music controll
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
+music[2]=mu_SweepingMines
 draw_set_font(military_font);
 draw_set_colour(c_white);
 /*temporary music selctor*/
-index=random_range(0,9)
-if(index&lt;5)index=0
-else index=1
+index=random_range(0,3)
+
 
 ini_open('options.ini')
 volume=ini_read_real('settings','volume',0.5);
@@ -75,9 +75,12 @@ ini_close();
             <string>//game over event
 if(lifes&lt;=0){
 obj_Player.alarm[3]=1;
+instance_create(room_width/2,room_height/2,obj_GameOver)
+
 }
 if(!instance_exists(obj_Mine)){
-    show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
+    //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
+    instance_create(room_width/2,room_height/2,obj_Victory)
     obj_Player.alarm[3]=1;
     room_restart();
     }
@@ -105,8 +108,9 @@ if(!instance_exists(obj_Mine)){
             <kind>1</kind>
             <string>if(instance_exists(obj_Player))
 
-if(easy_mode)draw_text(0,0,obj_Player.distance_to_mine);
-draw_text(64,0,"Disarmers left: "+string(obj_Player.disarmers_left))
+if(easy_mode)draw_text(0,0,"Distance to mine: "+string(obj_Player.distance_to_mine));
+draw_text(0,32,"Disarmers left: "+string(obj_Player.disarmers_left))
+draw_text(0,64," Soldiers left: "+string(lifes))
 </string>
           </argument>
         </arguments>

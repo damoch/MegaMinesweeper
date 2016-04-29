@@ -20,7 +20,7 @@
         <functionname></functionname>
         <codestring></codestring>
         <whoName>other</whoName>
-        <relative>-1</relative>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>disarmers_copy</string>
           </argument>
         </arguments>
       </action>
