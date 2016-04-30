@@ -18,9 +18,7 @@ count=round(random_range(5,15))
 for(i=0;i&lt;count;i++){
     mX=round(random(room_width))
     mY=round(random(room_height))
-    if(!(mX==obj_Player.x+64||mY==obj_Player.y+64||mX==obj_Player.x-64||mY==obj_Player.y-64))instance_create(mX,mY,obj_Mine);
-    
-
+    if(!(mX==obj_Player.x+64||mY==obj_Player.y+64||mX==obj_Player.x-64||mY==obj_Player.y-64))instance_create(mX,mY,obj_Mine);    
 }
 obj_Player.disarmers_left=obj_Mine.instance_count+round(random(3))</code>
   <enableViews>-1</enableViews>

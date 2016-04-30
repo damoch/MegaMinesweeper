@@ -37,6 +37,8 @@ index=random_range(0,3)
 
 ini_open('options.ini')
 volume=ini_read_real('settings','volume',0.5);
+easy_mode=ini_read_real('settings','easy_mode',false);
+fullscreen=ini_read_real('settings','fullscreen',false);
 ini_close();
 audio_play_sound(music[index],1,true);
 audio_sound_gain(music[index],volume,0)
@@ -45,9 +47,7 @@ audio_sound_gain(music[index],volume,0)
 //game setup
 game_state="running"
 lifes=3;
-ini_open('options.ini')
-easy_mode=ini_read_real('settings','easy_mode',false);
-ini_close();
+
 //easy_mode=true;
 //show_message(volume)
 </string>
@@ -76,13 +76,14 @@ ini_close();
 if(lifes&lt;=0){
 obj_Player.alarm[3]=1;
 instance_create(room_width/2,room_height/2,obj_GameOver)
+game_state="over"
 
 }
+//victory event
 if(!instance_exists(obj_Mine)){
     //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
     instance_create(room_width/2,room_height/2,obj_Victory)
-    obj_Player.alarm[3]=1;
-    room_restart();
+
     }
 </string>
           </argument>

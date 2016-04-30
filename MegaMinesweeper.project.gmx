@@ -67,6 +67,7 @@
     <objects name="GUI">
       <object>objects\obj_ExitGame</object>
       <object>objects\obj_EasyCheckBox</object>
+      <object>objects\obj_FullscreenCheckBox</object>
       <object>objects\obj_MusicSliderB</object>
       <object>objects\obj_MenuOptions</object>
       <object>objects\obj_MenuRandom</object>
