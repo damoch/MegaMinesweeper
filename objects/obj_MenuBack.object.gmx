@@ -26,10 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>//show_message(obj_SliderB.value)
+//these were used to save options when leaving
+/*
 ini_open('options.ini')
 ini_write_real('settings','volume',obj_MusicSliderB.value);
 ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
 ini_close();
+*/
 if(!instance_exists(obj_Controller)){
 room_goto(rm_Menu)
 }
@@ -53,7 +56,12 @@ with(obj_EasyCheckBox)//obj_MusicSliderB,obj_EasyCheckBox){
 {
     instance_destroy();
 }
+with(obj_FullscreenCheckBox)
+{
+    instance_destroy();
+}
 with(obj_MenuApply){instance_destroy()}
+
 instance_destroy();
 }
 </string>

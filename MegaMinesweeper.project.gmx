@@ -16,13 +16,15 @@
       <sound>sound\mu_ItsTooQuiet</sound>
       <sound>sound\mu_Careful</sound>
       <sound>sound\mu_SweepingMines</sound>
+      <sound>sound\mu_TickingSoFast</sound>
+      <sound>sound\mu_Minefield</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="tempfiles">
       <sprite>sprites\spr_TempPlayer</sprite>
-      <sprite>sprites\spr_SliderB</sprite>
-      <sprite>sprites\spr_SliderA</sprite>
+      <sprite>sprites\spr_SliderBTMP</sprite>
+      <sprite>sprites\spr_SliderATMP</sprite>
       <sprite>sprites\spr_TempField</sprite>
       <sprite>sprites\spr_Menu1</sprite>
       <sprite>sprites\spr_Obstacle</sprite>
@@ -41,6 +43,8 @@
       <sprite>sprites\spr_Menu0</sprite>
       <sprite>sprites\spr_GameOver</sprite>
       <sprite>sprites\spr_Victory</sprite>
+      <sprite>sprites\spr_SliderA</sprite>
+      <sprite>sprites\spr_SliderB</sprite>
     </sprites>
     <sprites name="GameFiles">
       <sprite>sprites\spr_Smoke</sprite>
@@ -98,9 +102,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Menu</room>
     <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Options</room>
-    <room>rooms\rm_Menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -115,16 +115,19 @@
     ini_open('options.ini')
     ini_write_real('settings','volume',obj_MusicSliderB.value);
     ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
-    ini_write_real('settings','fullscreen',obj_FullscreenCheckBox.fullsreen);
+    ini_write_real('settings','fullscreen',obj_FullscreenCheckBox.fullscreen);
     obj_Controller.volume=ini_read_real('settings','volume',0.5);
     audio_sound_gain(obj_Controller.music[obj_Controller.index],obj_Controller.volume,0)
     obj_Controller.easy_mode=ini_read_real('settings','easy_mode',false);
+    window_set_fullscreen(obj_FullscreenCheckBox.fullscreen);
     ini_close();
 }
 else{
     ini_open('options.ini')
     ini_write_real('settings','volume',obj_MusicSliderB.value);
     ini_write_real('settings','easy_mode',obj_EasyCheckBox.easy_mode);
+    ini_write_real('settings','fullscreen',obj_FullscreenCheckBox.fullscreen);
+    window_set_fullscreen(obj_FullscreenCheckBox.fullscreen);
     ini_close();
 }
 </string>

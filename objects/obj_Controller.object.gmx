@@ -29,10 +29,12 @@
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
 music[2]=mu_SweepingMines
+music[3]=mu_TickingSoFast
+music[4]=mu_Minefield
 draw_set_font(military_font);
 draw_set_colour(c_white);
 /*temporary music selctor*/
-index=random_range(0,3)
+index=random_range(0,5)
 
 
 ini_open('options.ini')
@@ -47,7 +49,7 @@ audio_sound_gain(music[index],volume,0)
 //game setup
 game_state="running"
 lifes=3;
-
+window_set_fullscreen(fullscreen);
 //easy_mode=true;
 //show_message(volume)
 </string>
