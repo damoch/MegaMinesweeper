@@ -105,6 +105,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_level0</room>
     <room>rooms\rm_Menu</room>
     <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Options</room>

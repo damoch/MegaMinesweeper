@@ -35,7 +35,7 @@ draw_set_font(military_font);
 draw_set_colour(c_white);
 /*temporary music selctor*/
 index=random_range(0,5)
-
+disarmed_mines=0;
 
 ini_open('options.ini')
 volume=ini_read_real('settings','volume',0.5);
@@ -52,6 +52,39 @@ lifes=3;
 window_set_fullscreen(fullscreen);
 //easy_mode=true;
 //show_message(volume)
+
+/* time handling for **story mode** */
+if(room!=rm_Randomized){
+    time=current_time
+    lifes=1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*victory screen*/
+
+time=(current_time-time)/1000
+
+show_message(string(time))
 </string>
           </argument>
         </arguments>
@@ -83,10 +116,39 @@ game_state="over"
 }
 //victory event
 if(!instance_exists(obj_Mine)){
-    //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
-    instance_create(room_width/2,room_height/2,obj_Victory)
 
+    //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
+    if(room!=rm_Randomized)instance_create(room_width/2,room_height/2,obj_Victory)
+    else {
+        //show time
+        //goto next room
+        alarm[0]=1
+    
     }
+    }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[0]=1
 </string>
           </argument>
         </arguments>
