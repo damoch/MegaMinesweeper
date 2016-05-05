@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//music controll
+            <string>level=""
+//music controll
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
 music[2]=mu_SweepingMines
@@ -36,7 +37,6 @@ draw_set_colour(c_white);
 /*temporary music selctor*/
 index=random_range(0,5)
 disarmed_mines=0;
-
 ini_open('options.ini')
 volume=ini_read_real('settings','volume',0.5);
 easy_mode=ini_read_real('settings','easy_mode',false);
@@ -57,6 +57,12 @@ window_set_fullscreen(fullscreen);
 if(room!=rm_Randomized){
     time=current_time
     lifes=1;
+    
+    //hiscore read
+    ini_open('hiscores.ini')
+    best_time=ini_read_real('levels',level,9999)
+    show_message(string(best_time)+"  "+string(room)+" "+room_caption)
+    ini_close()
 }
 </string>
           </argument>
@@ -82,9 +88,18 @@ if(room!=rm_Randomized){
             <kind>1</kind>
             <string>/*victory screen*/
 
-time=(current_time-time)/1000
 
-show_message(string(time))
+time=(current_time-time)/1000
+if(time&lt;best_time)
+{
+    show_message("A NEW RECOOORD! "+string(time)+" "+string(disarmed_mines))  
+    ini_open('hiscores.ini')
+    ini_write_real('levels',level,time);
+    ini_close();
+    best_time=time;
+
+}
+show_message(string(time)+" "+string(disarmed_mines))
 </string>
           </argument>
         </arguments>
@@ -118,7 +133,7 @@ game_state="over"
 if(!instance_exists(obj_Mine)){
 
     //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
-    if(room!=rm_Randomized)instance_create(room_width/2,room_height/2,obj_Victory)
+    if(room==rm_Randomized)instance_create(room_width/2,room_height/2,obj_Victory)
     else {
         //show time
         //goto next room
@@ -149,6 +164,7 @@ if(!instance_exists(obj_Mine)){
           <argument>
             <kind>1</kind>
             <string>alarm[0]=1
+
 </string>
           </argument>
         </arguments>
@@ -227,6 +243,9 @@ instance_create(512,384,obj_Menu);
           <argument>
             <kind>1</kind>
             <string>//obj_Player.alarm[3]=1;
+ini_open('hiscores.ini')
+ini_write_real('levels',string(room),9999)
+ini_close()
 audio_stop_all();
 </string>
           </argument>
