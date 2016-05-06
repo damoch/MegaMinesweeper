@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>level=""
+            <string>next_level=""
+level=""
 //music controll
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
@@ -97,6 +98,7 @@ if(time&lt;best_time)
     ini_write_real('levels',level,time);
     ini_close();
     best_time=time;
+    room_goto(next_level)
 
 }
 show_message(string(time)+" "+string(disarmed_mines))
