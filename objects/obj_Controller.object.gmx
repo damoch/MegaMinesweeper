@@ -88,9 +88,10 @@ if(room!=rm_Randomized){
           <argument>
             <kind>1</kind>
             <string>/*victory screen*/
-
-
+game_state="completed"
 time=(current_time-time)/1000
+instance_create(room_width/2,room_height/2,obj_MissionCompleted)
+
 if(time&lt;best_time)
 {
     show_message("A NEW RECOOORD! "+string(time)+" "+string(disarmed_mines))  
@@ -98,10 +99,12 @@ if(time&lt;best_time)
     ini_write_real('levels',level,time);
     ini_close();
     best_time=time;
-    room_goto(next_level)
 
-}
-show_message(string(time)+" "+string(disarmed_mines))
+    
+}    
+    obj_MissionCompleted.time=string(time);
+    obj_MissionCompleted.best_time=string(best_time);
+    obj_MissionCompleted.grade="A";
 </string>
           </argument>
         </arguments>
