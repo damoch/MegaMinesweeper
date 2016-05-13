@@ -25,25 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x=x;
+            <string>/*PLAYER SETUP*/
+
+start_x=x;
 start_y=y;
-rotate=false;
-looking="up";
+
+
+looking="up";       //to help determine players angle
+
+//this controls how fast is beeping of mine detector
 mine_detected=false;
-close_mine_x=false;
-close_mine_y=false;
-mine_near_x=false;
-mine_near_y=false;
 mine_danger=false;
-//setting ammount of disarmers
-//if(instance_exists(obj_Mine))disarmers_left=obj_Mine.instance_count+3;
-//else disarmers_left=13;
+
+
+
+
+rotate=false;
+
 
 music="";
-alarm[1]=1;
+
+alarm[1]=1;         //to load default beeping
+
 disarming=false;
-distance_to_mine=0;
-disarmers_copy=0;
+
+distance_to_mine=0; //value to show in easy mode
+
+disarmers_copy=0;   //in case of player's death actual disarming 
+                    //kits number is stored here
 </string>
           </argument>
         </arguments>
@@ -175,8 +184,9 @@ music="faster"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Walk
-if (keyboard_check(ord("W")) /*&amp;&amp; !place_meeting(x,y-1,obj_Obstacle)*/){
+            <string>/*PLAYER MOVEMENT*/
+
+if (keyboard_check(ord("W")) ){
     if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="up";
     image_angle=0;
@@ -187,7 +197,7 @@ if (keyboard_check(ord("W")) /*&amp;&amp; !place_meeting(x,y-1,obj_Obstacle)*/){
     if(y&gt;32&amp;&amp;!place_meeting(x,y-1,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")y=y-1;}
 }
 
-if (keyboard_check(ord("S")) /*&amp;&amp; !place_meeting(x,y+1,obj_Obstacle)*/){
+if (keyboard_check(ord("S")) ){
   if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="down";
     image_angle=180;
@@ -199,7 +209,7 @@ if (keyboard_check(ord("S")) /*&amp;&amp; !place_meeting(x,y+1,obj_Obstacle)*/){
     }
 }
 
-if (keyboard_check(ord("A")) /*&amp;&amp; !place_meeting(x-1,y,obj_Obstacle)*/){
+if (keyboard_check(ord("A")) ){
     if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="left";
     image_angle=90;
@@ -211,7 +221,7 @@ if (keyboard_check(ord("A")) /*&amp;&amp; !place_meeting(x-1,y,obj_Obstacle)*/){
     }
 }
 
-if (keyboard_check(ord("D")) /*&amp;&amp; !place_meeting(x+1,y,obj_Obstacle)*/){
+if (keyboard_check(ord("D")) ){
  if(rotate&amp;&amp;obj_Controller.game_state=="running"){
     looking="right";
     image_angle=270;
@@ -221,31 +231,40 @@ if (keyboard_check(ord("D")) /*&amp;&amp; !place_meeting(x+1,y,obj_Obstacle)*/){
     image_angle=270;
     if(!place_meeting(x+1,y,obj_Obstacle)&amp;&amp;x&lt;room_width-32&amp;&amp;obj_Controller.game_state=="running")x=x+1} 
     }
-//image_angle = point_direction(x, y, mouse_x, mouse_y);
-distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));
 
+/*BEEPING CONTROL*/
+    
+    
+distance_to_mine=distance_to_object(instance_nearest(x,y,obj_Mine));    //propably the most important value in whole code, so leave it as it is!!11one
+
+
+//mine is detected
 if(distance_to_mine&lt;=60&amp;&amp;mine_detected==false&amp;&amp;!mine_danger){
-
-    alarm[0]=1;
- 
+    alarm[0]=1; 
     mine_detected=true;
-    }
-else if(distance_to_mine&gt;60&amp;&amp;mine_detected==true){
-    mine_detected=false;
-    alarm[1]=1;
+}
 
-    }
+//mine is close to player
 if(distance_to_mine&lt;=20&amp;&amp;mine_danger=false){
-
-   alarm[2]=1;
+    alarm[2]=1;
     mine_danger=true;
-    }
-else if(distance_to_mine&gt;20&amp;&amp;mine_danger==true&amp;&amp;close_mine_x&amp;&amp;close_mine_y){
-    mine_danger=false;
+}
 
-    alarm[1]=1;
-    }
-else if(distance_to_mine&gt;60){alarm[1]=1; mine_danger=false;  mine_detected=false;}
+//mine is no longer close to player, but is still detected
+else if(distance_to_mine&gt;20&amp;&amp;mine_danger==true){
+    mine_danger=false;
+    alarm[0]=1;
+    mine_detected=true;
+}
+
+//player is away from mines
+else if(distance_to_mine&gt;60){
+    alarm[1]=1; 
+    mine_danger=false;  
+    mine_detected=false;
+}
+
+//Make player sprite invisible after game over
 if obj_Controller.lifes==0 image_alpha=0;
   
 

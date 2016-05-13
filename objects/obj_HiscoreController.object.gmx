@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>levels_number=2
+            <string>/*HISCORE DISPLAY*/
+
+levels_number=2//always update this value
 ini_open('hiscores.ini');
-//l0HS=ini_read_real('levels',"level0",9999)
+
 for(i=0;i&lt;levels_number;i++){
     hiscores[i]=ini_read_real('levels',"level"+string(i),9999);
 }
@@ -57,7 +59,9 @@ ini_close();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(0,0,"Level 0: "+string(hiscores[0]));
+            <string>
+//this is just temporary
+draw_text(0,0,"Level 0: "+string(hiscores[0]));
 draw_text(0,32,"Level 0: "+string(hiscores[1]));
 </string>
           </argument>

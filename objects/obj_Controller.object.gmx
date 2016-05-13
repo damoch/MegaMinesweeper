@@ -25,36 +25,54 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>next_level=""
-level=""
-//music controll
+            <string>/*INI OPENING*/
+ini_open('options.ini')
+
+
+/*AUDIO SETUP*/
+
+//music table
 music[0]=mu_ItsTooQuiet
 music[1]=mu_Careful
 music[2]=mu_SweepingMines
 music[3]=mu_TickingSoFast
 music[4]=mu_Minefield
-draw_set_font(military_font);
-draw_set_colour(c_white);
-/*temporary music selctor*/
+
+//index determines song to play
 index=random_range(0,5)
-disarmed_mines=0;
-ini_open('options.ini')
+
+//music volume
 volume=ini_read_real('settings','volume',0.5);
-easy_mode=ini_read_real('settings','easy_mode',false);
-fullscreen=ini_read_real('settings','fullscreen',false);
-ini_close();
+
+
 audio_play_sound(music[index],1,true);
 audio_sound_gain(music[index],volume,0)
-//video controll
-//window_set_fullscreen(true)
-//game setup
+
+
+/*VIDEO SETUP*/
+
+fullscreen=ini_read_real('settings','fullscreen',false);
+window_set_fullscreen(fullscreen);
+
+/*GAME SETUP*/
+
+disarmed_mines=0;
 game_state="running"
 lifes=3;
-window_set_fullscreen(fullscreen);
-//easy_mode=true;
-//show_message(volume)
+//fonts
+draw_set_font(military_font);
+draw_set_colour(c_white);
 
-/* time handling for **story mode** */
+easy_mode=ini_read_real('settings','easy_mode',false);
+
+//level setup
+next_level=""
+level=""
+
+/*INI CLOSING*/
+ini_close();
+
+/* STORY MODE ONLY */
 if(room!=rm_Randomized){
     time=current_time
     lifes=1;
@@ -62,9 +80,9 @@ if(room!=rm_Randomized){
     //hiscore read
     ini_open('hiscores.ini')
     best_time=ini_read_real('levels',level,9999)
-    show_message(string(best_time)+"  "+string(room)+" "+room_caption)
     ini_close()
 }
+
 </string>
           </argument>
         </arguments>
@@ -87,7 +105,8 @@ if(room!=rm_Randomized){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*victory screen*/
+            <string>/*VICTORY EVENT FOR STORY MODE*/
+
 game_state="completed"
 time=(current_time-time)/1000
 instance_create(room_width/2,room_height/2,obj_MissionCompleted)
@@ -127,24 +146,21 @@ if(time&lt;best_time)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//game over event
+            <string>/*GAME OVER EVENT*/
+
 if(lifes&lt;=0){
 obj_Player.alarm[3]=1;
 instance_create(room_width/2,room_height/2,obj_GameOver)
 game_state="over"
 
 }
-//victory event
-if(!instance_exists(obj_Mine)){
+/*VICTORY TRIGGER*/
 
-    //show_message("Victory! Survivors: "+string(lifes)+" Disarming gear left: "+string(obj_Player.disarmers_left));
+if(!instance_exists(obj_Mine)){
+    //for randomized
     if(room==rm_Randomized)instance_create(room_width/2,room_height/2,obj_Victory)
-    else {
-        //show time
-        //goto next room
-        alarm[0]=1
-    
-    }
+    //for story mode
+    else alarm[0]=1
     }
 </string>
           </argument>
@@ -168,7 +184,8 @@ if(!instance_exists(obj_Mine)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0]=1
+            <string>//temporary victory trigger
+alarm[0]=1
 
 </string>
           </argument>
@@ -192,8 +209,9 @@ if(!instance_exists(obj_Mine)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_exists(obj_Player))
+            <string>/*GAME STATUS*/
 
+if(instance_exists(obj_Player))
 if(easy_mode)draw_text(0,0,"Distance to mine: "+string(obj_Player.distance_to_mine));
 draw_text(0,32,"Disarmers left: "+string(obj_Player.disarmers_left))
 draw_text(0,64," Soldiers left: "+string(lifes))
@@ -219,7 +237,8 @@ draw_text(0,64," Soldiers left: "+string(lifes))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//audio_stop_all();
+            <string>/*MENU TRIGGER*/
+
 if(game_state=="running"){
 game_state="pause";
 instance_create(512,384,obj_Menu);
@@ -247,7 +266,10 @@ instance_create(512,384,obj_Menu);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//obj_Player.alarm[3]=1;
+            <string>/*ONLY FOR TEST PURPOSES*/
+
+//delete when development is over
+
 ini_open('hiscores.ini')
 ini_write_real('levels',string(room),9999)
 ini_close()
