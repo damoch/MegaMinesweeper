@@ -101,10 +101,8 @@
     </objects>
     <objects name="Misc">
       <object>objects\obj_Controller</object>
-      <object>objects\obj_Debug</object>
-      <object>objects\obj_Goal</object>
-      <object>objects\efc_CamShake</object>
       <object>objects\obj_HiscoreController</object>
+      <object>objects\efc_CamShake</object>
     </objects>
   </objects>
   <rooms name="rooms">
