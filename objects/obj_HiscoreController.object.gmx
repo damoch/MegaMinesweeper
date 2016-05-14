@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/*HISCORE DISPLAY*/
+draw_set_font(military_font)
+draw_set_colour(c_white)
+
 
 levels_number=2//always update this value
 ini_open('hiscores.ini');
@@ -59,10 +62,12 @@ ini_close();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//this is just temporary
-draw_text(0,0,"Level 0: "+string(hiscores[0]));
-draw_text(0,32,"Level 0: "+string(hiscores[1]));
+            <string>vary=128 //setting y position of text
+
+for(i=0;i&lt;levels_number;i++){
+    draw_text(430,vary,"Level "+string(i)+": "+string(hiscores[i])+"s");
+    vary+=32
+}
 </string>
           </argument>
         </arguments>

@@ -47,6 +47,7 @@
       <sprite>sprites\spr_SliderB</sprite>
       <sprite>sprites\spr_HowToButt</sprite>
       <sprite>sprites\spr_MissionVictory</sprite>
+      <sprite>sprites\spr_MenuReset</sprite>
     </sprites>
     <sprites name="GameFiles">
       <sprite>sprites\spr_Smoke</sprite>
@@ -65,6 +66,7 @@
     <background>background\bck_Options</background>
     <background>background\bck_Main</background>
     <background>background\bck_HOWTOPLAY</background>
+    <background>background\bck_Hiscores</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -87,6 +89,7 @@
       <object>objects\obj_Victory</object>
       <object>objects\obj_HowToPlay</object>
       <object>objects\obj_MissionCompleted</object>
+      <object>objects\obj_MenuReset</object>
     </objects>
     <objects name="GameFiles">
       <object>objects\obj_Obstacle</object>
@@ -106,8 +109,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_level0</room>
     <room>rooms\rm_Hiscores</room>
+    <room>rooms\rm_level0</room>
     <room>rooms\rm_level1</room>
     <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Menu</room>

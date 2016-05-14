@@ -37,7 +37,7 @@ looking="up";       //to help determine players angle
 mine_detected=false;
 mine_danger=false;
 
-
+disarmers_left=0
 
 
 rotate=false;

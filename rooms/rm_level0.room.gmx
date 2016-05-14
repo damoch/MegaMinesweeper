@@ -10,18 +10,9 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>/*mX=0
-mY=0
-count=round(random_range(5,15))
-//count=60
+  <code>/*LEVEL SETUP*/
 
-for(i=0;i&lt;count;i++){
-    mX=round(random(room_width))
-    mY=round(random(room_height))
-    if(!(mX==obj_Player.x+64||mY==obj_Player.y+64||mX==obj_Player.x-64||mY==obj_Player.y-64))instance_create(mX,mY,obj_Mine);    
-}
 
-*/
 obj_Player.disarmers_left=obj_Mine.instance_count+round(random(3))
 obj_Controller.level="level0"
 obj_Controller.next_level=rm_level1</code>
