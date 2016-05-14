@@ -30,7 +30,7 @@ draw_set_font(military_font)
 draw_set_colour(c_white)
 
 
-levels_number=5//always update this value
+levels_number=3//always update this value
 ini_open('hiscores.ini');
 
 for(i=0;i&lt;levels_number;i++){

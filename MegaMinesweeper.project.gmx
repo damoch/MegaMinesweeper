@@ -21,6 +21,17 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="tempfiles">
+      <sprite>sprites\spr_TempPlayer</sprite>
+      <sprite>sprites\spr_SliderBTMP</sprite>
+      <sprite>sprites\spr_SliderATMP</sprite>
+      <sprite>sprites\spr_TempField</sprite>
+      <sprite>sprites\spr_Menu1</sprite>
+      <sprite>sprites\spr_Obstacle</sprite>
+      <sprite>sprites\spr_TempBorder</sprite>
+      <sprite>sprites\spr_Target</sprite>
+      <sprite>sprites\spr_TempDisarmed</sprite>
+    </sprites>
     <sprites name="GUI">
       <sprite>sprites\spr_Switch</sprite>
       <sprite>sprites\spr_MenuApply</sprite>
@@ -55,6 +66,7 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
+    <background>background\bck_Minefield</background>
     <background>background\bck_Menu</background>
     <background>background\bck_Options</background>
     <background>background\bck_Main</background>

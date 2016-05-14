@@ -112,6 +112,7 @@ time=(current_time-time)/1000
 instance_create(room_width/2,room_height/2,obj_MissionCompleted)
 
 if(time&lt;best_time){
+    show_message("A NEW RECOOORD! "+string(time)+" "+string(disarmed_mines))  
     ini_open('hiscores.ini')
     ini_write_real('levels',level,time);
     ini_close();
