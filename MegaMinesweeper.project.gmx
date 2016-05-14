@@ -66,7 +66,6 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bck_Minefield</background>
     <background>background\bck_Menu</background>
     <background>background\bck_Options</background>
     <background>background\bck_Main</background>

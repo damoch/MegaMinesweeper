@@ -24,7 +24,7 @@ for(i=0;i&lt;count;i++){
 */
 obj_Player.disarmers_left=obj_Mine.instance_count+round(random(3))
 obj_Controller.level="level4"
-obj_Controller.next_level=rm_level0</code>
+obj_Controller.next_level=rm_Hiscores</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
