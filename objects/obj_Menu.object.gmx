@@ -50,11 +50,11 @@ instance_create(x,y+200,obj_ExitGame);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//with(obj_MenuOptions){instance_destroy();}
-//with(obj_ExitGame){instance_destroy();}
-with(obj_BackToGame){instance_destroy();}
-//obj_Controller.game_state="running";
-///instance_destroy();
+            <string>with(obj_MenuOptions){instance_destroy();}
+with(obj_ExitGame){instance_destroy();}
+with(obj_Menu){instance_destroy();}
+obj_Controller.game_state="running";
+instance_destroy();
 </string>
           </argument>
         </arguments>

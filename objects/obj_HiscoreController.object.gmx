@@ -65,7 +65,7 @@ ini_close();
             <string>vary=128 //setting y position of text
 
 for(i=0;i&lt;levels_number;i++){
-    draw_text(430,vary,"Level "+string(i)+": "+string(hiscores[i])+"s");
+    draw_text(430,vary,"Mission "+string(i)+": "+string(hiscores[i])+"s");
     vary+=32
 }
 </string>
