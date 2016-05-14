@@ -194,7 +194,8 @@ if (keyboard_check(ord("W")) ){
     else{
     looking="up";
     image_angle=0;
-    if(y&gt;32&amp;&amp;!place_meeting(x,y-1,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")y=y-1;}
+    if(y&gt;32&amp;&amp;!(place_meeting(x,y-1,obj_Obstacle0)||place_meeting(x,y-1,obj_Obstacle1)||place_meeting(x,y-1,obj_Obstacle2))&amp;&amp;
+    obj_Controller.game_state=="running")y=y-1;}
 }
 
 if (keyboard_check(ord("S")) ){
@@ -205,8 +206,8 @@ if (keyboard_check(ord("S")) ){
     else{
     looking="down";
     image_angle=180;
-    if(y&lt;room_height-32&amp;&amp;!place_meeting(x,y+1,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")y=y+1
-    }
+    if(y&lt;room_height-32&amp;&amp;!(place_meeting(x,y+1,obj_Obstacle0)||place_meeting(x,y+1,obj_Obstacle1)||place_meeting(x,y+1,obj_Obstacle2))
+    &amp;&amp;obj_Controller.game_state=="running")y=y+1}
 }
 
 if (keyboard_check(ord("A")) ){
@@ -217,8 +218,8 @@ if (keyboard_check(ord("A")) ){
     else{
     looking="left";
     image_angle=90;
-    if(x&gt;32&amp;&amp;!place_meeting(x-1,y,obj_Obstacle)&amp;&amp;obj_Controller.game_state=="running")x=x-1
-    }
+    if(x&gt;32&amp;&amp;!(place_meeting(x-1,y,obj_Obstacle0)||place_meeting(x-1,y,obj_Obstacle1)||place_meeting(x-1,y,obj_Obstacle2))
+    &amp;&amp;obj_Controller.game_state=="running")x=x-1}
 }
 
 if (keyboard_check(ord("D")) ){
@@ -229,7 +230,8 @@ if (keyboard_check(ord("D")) ){
     else{
     looking="right";
     image_angle=270;
-    if(!place_meeting(x+1,y,obj_Obstacle)&amp;&amp;x&lt;room_width-32&amp;&amp;obj_Controller.game_state=="running")x=x+1} 
+    if(!(place_meeting(x+1,y,obj_Obstacle0)||place_meeting(x+1,y,obj_Obstacle1)||place_meeting(x+1,y,obj_Obstacle2))
+    &amp;&amp;x&lt;room_width-32&amp;&amp;obj_Controller.game_state=="running")x=x+1} 
     }
 
 /*BEEPING CONTROL*/

@@ -78,8 +78,8 @@ room_goto(next)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(x-117,y-63,time)
-draw_text(x-117,y-25,best_time)
+draw_text(x-117,y-35,time)
+draw_text(x-117,y+2,best_time)
 </string>
           </argument>
         </arguments>

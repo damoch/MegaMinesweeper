@@ -49,6 +49,7 @@
       <sprite>sprites\spr_MissionVictory</sprite>
       <sprite>sprites\spr_MenuReset</sprite>
       <sprite>sprites\spr_MenuHiscores</sprite>
+      <sprite>sprites\spr_MenuRandom</sprite>
     </sprites>
     <sprites name="GameFiles">
       <sprite>sprites\spr_Smoke</sprite>
@@ -59,6 +60,9 @@
       <sprite>sprites\spr_Disarmer</sprite>
       <sprite>sprites\spr_Blood</sprite>
       <sprite>sprites\spr_Mine</sprite>
+      <sprite>sprites\spr_Obstacle0</sprite>
+      <sprite>sprites\spr_Obstacle1</sprite>
+      <sprite>sprites\spr_Obstacle2</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -68,6 +72,7 @@
     <background>background\bck_Main</background>
     <background>background\bck_HOWTOPLAY</background>
     <background>background\bck_Hiscores</background>
+    <background>background\bck_Level1</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -80,7 +85,7 @@
       <object>objects\obj_FullscreenCheckBox</object>
       <object>objects\obj_MusicSliderB</object>
       <object>objects\obj_MenuOptions</object>
-      <object>objects\obj_MenuRandom</object>
+      <object>objects\obj_MenuGameStart</object>
       <object>objects\obj_MenuBack</object>
       <object>objects\obj_MusicSliderA</object>
       <object>objects\obj_Menu</object>
@@ -92,9 +97,11 @@
       <object>objects\obj_MissionCompleted</object>
       <object>objects\obj_MenuReset</object>
       <object>objects\spr_MenuTopscores</object>
+      <object>objects\obj_MenuRandom</object>
     </objects>
     <objects name="GameFiles">
-      <object>objects\obj_Obstacle</object>
+      <object>objects\obj_Obstacle0</object>
+      <object>objects\obj_Obstacle1</object>
       <object>objects\obj_Blood</object>
       <object>objects\obj_Explosion</object>
       <object>objects\obj_Player</object>
@@ -103,6 +110,7 @@
       <object>objects\obj_Disarmed</object>
       <object>objects\obj_Smoke</object>
       <object>objects\obj_DisarmKit</object>
+      <object>objects\obj_Obstacle2</object>
     </objects>
     <objects name="Misc">
       <object>objects\obj_Controller</object>
@@ -115,6 +123,8 @@
     <room>rooms\rm_Hiscores</room>
     <room>rooms\rm_level0</room>
     <room>rooms\rm_level1</room>
+    <room>rooms\rm_level2</room>
+    <room>rooms\rm_level3</room>
     <room>rooms\rm_Randomized</room>
     <room>rooms\rm_Options</room>
     <room>rooms\rm_HowToPlay</room>
