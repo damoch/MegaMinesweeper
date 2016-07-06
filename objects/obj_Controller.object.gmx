@@ -112,7 +112,6 @@ time=(current_time-time)/1000
 instance_create(room_width/2,room_height/2,obj_MissionCompleted)
 
 if(time&lt;best_time){
-    show_message("A NEW RECOOORD! "+string(time)+" "+string(disarmed_mines))  
     ini_open('hiscores.ini')
     ini_write_real('levels',level,time);
     ini_close();
@@ -164,31 +163,6 @@ if(!instance_exists(obj_Mine)){
     //for story mode
     else alarm[0]=1
     }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//temporary victory trigger
-alarm[0]=1
-
 </string>
           </argument>
         </arguments>
@@ -276,23 +250,10 @@ ini_open('hiscores.ini')
 ini_write_real('levels',string(room),9999)
 ini_close()
 audio_stop_all();
+room_restart()
 </string>
           </argument>
         </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
